@@ -1,0 +1,142 @@
+/* General Body */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    color: #333;
+    background: #f4f6f9;
+    overflow-x: hidden;
+}
+
+/* Topbar */
+.topbar {
+    background: #ffffff;
+    color: #333;
+    padding: 12px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.topbar h4 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.topbar .logout-btn {
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 6px;
+    background: #e63946;
+    transition: 0.3s;
+    font-weight: 500;
+}
+.topbar .logout-btn:hover {
+    background: #c92a34;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    color: #333;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    height: calc(100% - 65px);
+    padding-top: 20px;
+    border-right: 1px solid #ddd;
+    transition: 0.3s;
+}
+.sidebar h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+}
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    padding: 12px 20px;
+    margin: 5px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+    text-decoration: none;
+}
+.sidebar a:hover,
+.sidebar a.active {
+    background: #f0f0f0;
+    color: #0077b6;
+}
+.sidebar .collapse a {
+    margin-left: 25px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* Content */
+.content {
+    margin-left: 270px;
+    padding: 100px 30px 30px 30px;
+    transition: 0.3s;
+}
+.header h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Card */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.card-header {
+    background: #0f3ba7;
+    color: #fff;
+    font-weight: 600;
+}
+.table thead th {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Responsive */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    font-size: 26px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1100;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        left: -270px;
+    }
+    .sidebar.active {
+        left: 0;
+        z-index: 1000;
+    }
+    .content {
+        margin-left: 0;
+        padding-top: 120px;
+    }
+    .hamburger {
+        display: block;
+    }
+    .logout-btn span {
+        display: none;
+    }
+}
